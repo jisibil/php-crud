@@ -1,22 +1,43 @@
+<?php
+
+    if(!isset($_SESSION)){
+      session_start();
+    }
+
+    include_once("conn.php");
+    
+
+    if(isset($_SESSION['Access']) && $_SESSION['Access'] == "Admin"){
+      echo "<div class='message success'>Welcome ".$_SESSION['Access']."</div><br/><br/>";
+    }elseif(isset($_SESSION['Access']) && $_SESSION['Access'] == "Faculty"){
+      echo "<div class='message success'>Welcome ".$_SESSION['Access']."</div><br/><br/>";
+    }elseif(isset($_SESSION['Access']) && $_SESSION['Access'] == "Student"){
+      echo "<div class='message success'>Welcome ".$_SESSION['Access']."</div><br/><br/>";
+    }else{
+        echo header("Location: login.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- cdn bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>BASIC CRUD</title>
+    <link rel="stylesheet" href="dist/bootstrap-5.0.2/css/bootstrap.min.css">
+    <title>LogIn</title>
 </head>
-<body>
+<body id='bg-img'>
+
 <div class="container d-flex justify-content-center my-3">
 <center>
     <h1>Students List</h1>
     <br>
 <table class="table">
         <thead>
-            <tr style="color:white">
+            <tr style="color:black">
                 <th scope="col">#</th>
                 <th scope="col">Firstname</th>
                 <th></th>
@@ -34,16 +55,16 @@
         <?php
         include 'conn.php';
         $no =  1 ;
-                $data = mysqli_query($connections, "SELECT * FROM student_list");
+                $data = mysqli_query($connections, "SELECT * FROM students_list");
                 while($row = mysqli_fetch_array($data)){
             ?>
-            <tr style="color:white">
+            <tr style="color:black">
                 <td><?php echo $no; ?></td>
-                <td><?php echo $row['firstname']; ?></td>
+                <td><?php echo $row['Firstname']; ?></td>
                 <td></td>
-                <td><?php echo $row['lastname']; ?></td>
+                <td><?php echo $row['Lastname']; ?></td>
                 <td></td>
-                <td><?php echo $row['department']; ?></td>
+                <td><?php echo $row['Department']; ?></td>
                 <td></td>
                 <td></td>
                 <td><a type="button" class="btn btn-dark" href="deleteData.php?deleteDataid=<?php echo $row['id']?>">Delete</a></td>              
@@ -74,6 +95,6 @@
 </div>
   
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="dist/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

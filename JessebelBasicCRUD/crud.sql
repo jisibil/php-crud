@@ -29,16 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `student_list` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `department` varchar(30) NOT NULL
+  `Firstname` varchar(30) NOT NULL,
+  `Lastname` varchar(30) NOT NULL,
+  `Department` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student_list`
 --
 
-INSERT INTO `student_list` (`id`, `firstname`, `lastname`, `department`) VALUES
+INSERT INTO `students_list` (`id`, `Firstname`, `Lastname`, `Department`) VALUES
 (10, 'Jessebel', 'Batan', 'BSCS'),
 (12, 'Benjie', 'Mondia', 'BSCS');
 
@@ -49,7 +49,7 @@ INSERT INTO `student_list` (`id`, `firstname`, `lastname`, `department`) VALUES
 --
 -- Indexes for table `student_list`
 --
-ALTER TABLE `student_list`
+ALTER TABLE `students_list`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -59,7 +59,7 @@ ALTER TABLE `student_list`
 --
 -- AUTO_INCREMENT for table `student_list`
 --
-ALTER TABLE `student_list`
+ALTER TABLE `students_list`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
