@@ -1,30 +1,3 @@
-<?php
-    
-    session_start();
-
-    include_once("conn.php");
-
-    if(isset($_POST['login'])){
-        
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-        $user = $connections->query($sql) or die ($connect->error);
-        $row = $user->fetch_assoc();
-        $total = $user->num_rows;
-
-        if($total > 0){
-            $_SESSION['UserLogin'] = $row['username'];
-            $_SESSION['Access'] = $row['access'];
-            echo header("Location: index.php");
-        }else{
-            echo "<div class='message warning'>No user found.</div>";
-        }
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +9,8 @@
     <title>LogIn</title>
 </head>
 <body id='bg-img'>
-        <div class="container my-5">
+
+    <div class="container my-5">
         <div class="row">
             <div class="col-md-offset-5 col-md-4 text-center">
                 <div class="form-login"></br>
@@ -47,15 +21,12 @@
                     <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password"/>
                     </br></br>
                     <div class="wrapper">
-                            <span class="group-btn">
-                                <a href="login.php" class="btn btn-primary btn-md">Log In <i class="fa fa-sign-in"></i></a>
-                            </span>
+                    <a href="index.php" class="btn btn-outline-dark btn-md px-5" type="submit"><b>Login</b></a>
                     </div>
                 </div>
             </div>
         </div>
-
-
+    
     <script src="dist/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

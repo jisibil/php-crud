@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dist/bootstrap-5.0.2/css/bootstrap.min.css">
-    <title>LogIn</title>
+    <title>Student</title>
 </head>
 <body id='bg-img'>
 
