@@ -22,7 +22,6 @@
             echo "<div class='message warning'>No user found.</div>";
         }
     }
-
 ?>
 
 <!DOCTYPE html>

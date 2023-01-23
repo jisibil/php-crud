@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    $('#example').DataTable({
+        order: [[3, 'desc']],
+    });
+});
+
+$(document).ready(function () {
 
     $('.viewbtn').on('click', function () {
         $('#viewmodal').modal('show');
