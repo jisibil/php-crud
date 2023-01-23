@@ -7,3 +7,8 @@
     }
 
 ?>
+
+<!-- USERS
+JESSEBEL - 123 - ADMIN
+MICHAEL - 456 - FACULTY
+BENJIE - 789 STUDENT -->
