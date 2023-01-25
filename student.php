@@ -24,12 +24,13 @@
     <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
+    <div class="container my-5 text-white">
 <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Firstname</th>
                 <th>Lastname</th>
-                <th>Office</th>
+                <th>Department</th>
                 <th>Age</th>
                 <th>Start date</th>
                 <th>Salary</th>
@@ -61,17 +62,8 @@
                 <td>$86,000</td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
     </table>
+    </div>
 
 
 

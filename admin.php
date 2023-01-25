@@ -30,7 +30,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add Student Data </h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add Students Data </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -50,8 +50,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label> Course </label>
-                            <input type="text" name="course" class="form-control" placeholder="Enter Course" autocomplete="off" required>
+                            <label> Department </label>
+                            <input type="text" name="department" class="form-control" placeholder="Enter Department" autocomplete="off" required>
                         </div>
 
                     </div>
@@ -71,7 +71,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Edit Student Data </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Edit Students Data </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -94,8 +94,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label> Course </label>
-                            <input type="text" name="course" id="course" class="form-control" placeholder="Enter Course">
+                            <label> Department </label>
+                            <input type="text" name="department" id="d" class="form-control" placeholder="Enter Department">
                         </div>
 
                     </div>
@@ -115,7 +115,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Delete Student Data </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Delete Students Data </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -127,23 +127,23 @@
 
                         <input type="hidden" name="delete_id" id="delete_id">
 
-                        <h4> Do you want to Delete this Data ??</h4>
+                        <h4> Do you want to delete this Data ?</h4>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal"> NO </button>
-                        <button type="submit" name="deletedata" class="btn btn-dark"> Yes !! Delete it. </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                        <button type="submit" name="deletedata" class="btn btn-dark"> You successfully deleted the data! </button>
                     </div>
                 </form>
 
             </div>
         </div>
     </div>
-
-    <div class="container">
+    <center>
+    <div class="container my-5">
         <div class="card">
             <div class="card-body">
-                <h1 style="text-align:center;"><b> Student List </b></h1>
-                <button type="button" class="btn btn-dark my-3" data-toggle="modal" data-target="#studentaddmodal">ADD DATA</button>
+                <h1 style="text-align:center;" class='text-white'><b> Students List </b></h1>
+                <button type="button" class="btn btn-dark my-3" data-toggle="modal" data-target="#studentaddmodal">Add data</button>
                 <a class="btn btn-primary" href="logout.php" role="button">Logout</a>
                 <?php
                     $con = mysqli_connect("localhost","root","");
@@ -159,7 +159,6 @@
                             <th scope="col">Firstname</th>
                             <th scope="col">Lastname</th>
                             <th scope="col">Department</th>
-                            <th scope="col">Operations</th>
                         </tr>
                     </thead>
                     <?php
@@ -191,6 +190,7 @@
             </div>
         </div>
     </div>
+    </center>
 
 
     <!-- Bootstrap Javascript -->
